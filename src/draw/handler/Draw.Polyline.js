@@ -161,7 +161,7 @@ L.Draw.Polyline = L.Draw.Feature.extend({
 		}
 
 		this._markers.push(this._createMarker(latlng));
-
+		this._poly.fire("insert_at", {index: this._poly.getLatLngs().length});
 		this._poly.addLatLng(latlng);
 
 		if (this._poly.getLatLngs().length === 2) {

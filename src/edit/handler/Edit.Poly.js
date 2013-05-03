@@ -101,6 +101,9 @@ L.Edit.Poly = L.Handler.extend({
 			.off('drag', this._onMarkerDrag, this)
 			.off('dragend', this._fireEdit, this)
 			.off('click', this._onMarkerClick, this);
+
+		this._poly.fire("remove_at", {index: i});
+
 	},
 
 	_fireEdit: function () {
